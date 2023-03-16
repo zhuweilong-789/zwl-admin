@@ -12,12 +12,12 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/multi-word-component-names': 'off',
     'vue/html-self-closing': [
-      'error',
+      'warn',
       {
         html: {
           void: 'never',
-          normal: 'any', //配置自动闭合标签
-          component: 'any'
+          normal: 'always', //配置自动闭合标签
+          component: 'always'
         },
         svg: 'always',
         math: 'always'

@@ -1,17 +1,22 @@
 // 对路由进行封装管理
 import Vue from 'vue'
-import vueRouter from 'vue-router'
+import Router from 'vue-router'
 
-Vue.use(vueRouter)
+Vue.use(Router)
 
 // 同步路由
 export const tbRouter = [
-  {},
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/login.vue'),
+    meta: { title: '用户登录' }
+  },
   {
     path: '/home',
     name: 'Home',
     component: () => import('@/views/home/index.vue'),
-    meta: {}
+    meta: { title: '首页' }
   },
   {
     path: '/user',
@@ -24,9 +29,9 @@ export const tbRouter = [
 export const asyncRouter = []
 
 // 创建路由实例
-const router = new vueRouter({
+const router = new Router({
   mode: 'history',
-  router: tbRouter
+  routes: tbRouter // 这里注意是routes
 })
 
 export default router
