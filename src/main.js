@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router/index'
 import antDesignVue from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
-import '@/styles/mePublic.css'
+import '@/styles/mePublic.css' // 全局样式文件
 
 Vue.use(antDesignVue)
 
